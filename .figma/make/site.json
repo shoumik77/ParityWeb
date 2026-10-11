@@ -1,0 +1,15 @@
+{
+  "title": "Parity",
+  "description": "Enables music professionals to instantly compare mixes with reference tracks using A/B switching, loudness, spectrum, and stereo analysis within their DAW.",
+  "language": "en",
+  "robots": {
+    "index": true
+  },
+  "icons": {
+    "icon": "/favicon.svg"
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
