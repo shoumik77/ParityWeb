@@ -4,7 +4,6 @@
 :root {
   color-scheme: dark;
   --cream: #14130f;
-  --cream-deep: #201e19;
   --ink: #f0ebe1;
   --taupe: #a49e92;
   --line: #454139;
@@ -234,12 +233,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .product-views h2 { margin: 0; font-size: var(--section-heading); font-weight: 500; line-height: 1.12; letter-spacing: -.025em; }
 .product-views h2 span { color: var(--taupe); }
 .product-views p { margin: 24px 0 0; color: var(--taupe); line-height: 1.7; }
-.product-views > img { display: block; width: min(100%, 1100px); height: auto; margin-inline: auto; border: 1px solid var(--line-soft); border-radius: 6px; box-shadow: 0 24px 80px rgba(0,0,0,.2); }
-.view-switcher { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line-soft); border-radius: 6px; background: var(--graph-background); }
-.view-switcher button { position: relative; padding: 12px 24px; border: 1px solid transparent; border-radius: 4px; color: var(--taupe); font: 500 13px var(--sans); transition: color .2s, background .2s; }
-.view-switcher button:hover { color: var(--ink); }
-.view-switcher button[aria-pressed="true"] { background: var(--cream-deep); border-color: var(--line); color: var(--ink); }
-.view-switcher button[aria-pressed="true"]::after { content: ""; position: absolute; bottom: -1px; left: 20%; right: 20%; height: 2px; background: var(--orange); }
+.product-views > video { display: block; width: min(100%, 1100px); height: auto; margin-inline: auto; border: 1px solid var(--line-soft); border-radius: 6px; box-shadow: 0 24px 80px rgba(0,0,0,.2); }
 
 .refresh-intro { animation: intro-exit 1.55s ease both; }
 .intro-position { animation: intro-unfold .55s cubic-bezier(.65,0,.25,1) .45s both; }

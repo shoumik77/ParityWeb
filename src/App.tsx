@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import pluginScreenshot from "./imports/parity-spectrum.png"
-import masterScreenshot from "./imports/parity-master.png"
-import loudnessScreenshot from "./imports/parity-loudness.png"
+import demoVideo from "./imports/parity-demo.mp4"
 
 function musicalSpectrumPath(
   beats: number,
@@ -350,7 +349,6 @@ const featureDetails = [
 ]
 
 export default function App() {
-  const [productView, setProductView] = useState<"loudness" | "master">("master")
   const [menuOpen, setMenuOpen] = useState(false)
   const [showIntro, setShowIntro] = useState(
     () => !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -677,27 +675,21 @@ export default function App() {
         </div>
       </section>
 
-      <section className="product-views shell" aria-label="Explore the new Parity interface">
+      <section className="product-views shell" aria-label="Parity demo">
         <div className="product-views-heading">
           <div>
             <h2>A closer look.<br /><span>Every detail in view.</span></h2>
             <p>From loudness to the final peaks. One focused workspace.</p>
           </div>
-          <div className="view-switcher" role="group" aria-label="Plugin screenshot view">
-            {(["loudness", "master"] as const).map((view) => (
-              <button key={view} type="button" aria-pressed={productView === view} onClick={() => setProductView(view)}>
-                {view === "loudness" ? "Loudness" : "Master"}
-              </button>
-            ))}
-          </div>
         </div>
-        <img
-          src={productView === "master" ? masterScreenshot : loudnessScreenshot}
-          alt={productView === "master" ? "Parity Master view with peak history, clipping and limiting controls." : "Parity Loudness view with integrated loudness history and stereo measurements."}
-          width={1100}
-          height={750}
-          loading="lazy"
-          decoding="async"
+        <video
+          src={demoVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Screen recording of the Parity plugin comparing a mix to a reference track"
         />
       </section>
 
