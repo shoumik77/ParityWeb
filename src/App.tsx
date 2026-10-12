@@ -154,7 +154,24 @@ function useMusicalSpectrum(playing: boolean, floor: number) {
 }
 
 function Arrow({ down = false }: { down?: boolean }) {
-  return <span aria-hidden="true">{down ? "↓" : "↗"}</span>
+  return (
+    <svg
+      className="arrow-icon"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {down ? (
+        <path d="M8 3 V13 M3 8 L8 13 L13 8" />
+      ) : (
+        <path d="M4 12 L12 4 M6 4 H12 V10" />
+      )}
+    </svg>
+  )
 }
 
 function SignalRibbon({ quiet = false }: { quiet?: boolean }) {
@@ -554,7 +571,7 @@ export default function App() {
                 onClick={() => setMenuOpen(false)}
                 className="border-b border-[var(--line-soft)] py-4 font-mono text-xs tracking-widest last:border-0 hover:text-[var(--orange)]"
               >
-                {label} <span className="float-right">↗</span>
+                {label} <span className="float-right"><Arrow /></span>
               </a>
             ))}
           </div>
